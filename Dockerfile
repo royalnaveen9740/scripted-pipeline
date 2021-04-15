@@ -27,12 +27,15 @@
 #EXPOSE  80
 
 FROM ubuntu:latest
-ENV TZ=Asia/Kathmandu
-RUN ln -snf /usr/shar/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 MAINTAINER Naveen.knaveen007singh@rediffmail.com
-RUN apt-get update && apt-get install -y apache2 \ 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install tzdata
+RUN apt-get install -y apache2 \ 
   zip \
   unzip 
+ENV TZ=Asia/Kathmandu
+RUN ln -snf /usr/shar/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone  
+RUN dpkg-reconfigure --frontend noninteractive tzdata
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page261/soft-team.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip soft-team.zip
