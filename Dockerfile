@@ -27,7 +27,7 @@
 #EXPOSE  80
 
 FROM ubuntu:latest
-ENV TZ=Asia/India
+ENV TZ=Asia/Kathmandu
 RUN ln -snf /usr/shar/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 MAINTAINER Naveen.knaveen007singh@rediffmail.com
 RUN apt-get update && apt-get install -y apache2 \ 
