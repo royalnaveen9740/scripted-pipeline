@@ -1,4 +1,15 @@
-
+FROM centos:latest
+MAINTAINER Naveen.knaveen007singh@rediffmail.com
+RUN yum install -y httpd \
+  zip \
+  unzip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page258/loxury.zip /var/www/html/
+WORKDIR /var/www/html
+RUN unzip loxury.zip
+RUN cp -rvf loxury/* .
+RUN rm -rf loxury loxury.zip
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+EXPOSE 80
 
 # FROM centos:latest
 # MAINTAINER Naveen.knaveen007singh@gmail.com
@@ -26,15 +37,15 @@
 #CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 #EXPOSE  80
 
-FROM ubuntu:latest
-MAINTAINER Naveen.knaveen007singh@rediffmail.com
-RUN apt-get update && apt-get install -y apache2 \ 
-  zip \
-  unzip 
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page261/soft-team.zip /var/www/html/
-WORKDIR /var/www/html/
-RUN unzip soft-team.zip
-RUN cp -rvf bootstrap-agency-template/* .
-RUN rm -rf soft-team.zip bootstrap-agency-template
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
-EXPOSE  80
+#FROM ubuntu:latest
+#MAINTAINER Naveen.knaveen007singh@rediffmail.com
+#RUN apt-get update && apt-get install -y apache2 \ 
+#  zip \
+#  unzip 
+#ADD https://www.free-css.com/assets/files/free-css-templates/download/page261/soft-team.zip /var/www/html/
+#WORKDIR /var/www/html/
+#RUN unzip soft-team.zip
+#RUN cp -rvf bootstrap-agency-template/* .
+#RUN rm -rf soft-team.zip bootstrap-agency-template
+#CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+#EXPOSE  80
