@@ -11,6 +11,8 @@ RUN rm -rf loxury loxury.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
 
+
+
 # FROM centos:latest
 # MAINTAINER Naveen.knaveen007singh@gmail.com
 # RUN yum install -y httpd \
