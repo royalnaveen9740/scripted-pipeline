@@ -1,3 +1,4 @@
+
 FROM centos:latest
 MAINTAINER Naveen.knaveen007singh@rediffmail.com
 RUN yum install -y httpd \
@@ -39,7 +40,7 @@ EXPOSE 80
 # CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 # EXPOSE  80
 
-<<<<<<< HEAD
+
 #FROM ubuntu:latest
 #MAINTAINER Naveen.knaveen007singh@rediffmail.com
 #RUN apt-get update && apt-get install -y apache2 \ 
@@ -52,7 +53,7 @@ EXPOSE 80
 #RUN rm -rf soft-team.zip bootstrap-agency-template
 #CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 #EXPOSE  80
-=======
+
 # FROM ubuntu:latest
 # MAINTAINER Naveen.knaveen007singh@rediffmail.com
 # RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install tzdata
@@ -69,4 +70,4 @@ EXPOSE 80
 # RUN rm -rf soft-team.zip bootstrap-agency-template
 # CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 # EXPOSE  80
->>>>>>> b88aeec1a5a55543a8044b3f4dcd7e7de8b8dd58
+
