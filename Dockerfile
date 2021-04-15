@@ -39,6 +39,6 @@ ADD https://www.free-css.com/assets/files/free-css-templates/download/page261/so
 WORKDIR /var/www/html/
 RUN unzip soft-team.zip
 RUN cp -rvf bootstrap-agency-template/* .
-RUN rm -rf soft-team.zip
+RUN rm -rf soft-team.zip bootstrap-agency-template
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 EXPOSE  80
