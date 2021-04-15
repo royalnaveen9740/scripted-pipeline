@@ -27,10 +27,12 @@
 #EXPOSE  80
 
 FROM ubuntu:latest
+ENV TZ=Asia/India
 MAINTAINER Naveen.knaveen007singh@rediffmail.com
 RUN apt-get update && apt-get install -y apache2 \ 
   zip \
   unzip 
+RUN ln -snf /usr/shar/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page261/soft-team.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip soft-team.zip
